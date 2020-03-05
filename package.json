@@ -1,0 +1,16 @@
+{
+  "name": "webpersonsanalytics",
+  "version": "1.0.0",
+  "description": "analytics",
+  "main": "crawler.js",
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
