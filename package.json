@@ -4,6 +4,7 @@
   "description": "analytics",
   "main": "crawler.js",
   "dependencies": {
+    "mongoose": "^5.9.3",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.2"
   },
