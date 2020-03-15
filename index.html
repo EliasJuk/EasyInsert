@@ -1,64 +1,22 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Hello World!!!!!</title>
-        <style>
-            input.text {
-                display: block;
-                height: 25px;
-                border-radius: 6px;
-            }
-            label {
-                display: block;
-                margin-top: 20px;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!!!!!</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <!-- DIV PRINCIPAL -->
+    <div id='main'>
+        <label>Campos a ser Povoados</label><input type="Number" id="nCampos"/>
+        <label>Linhas a ser Povoadas</label><input type="Number" id="nCampos"/><br/>
+        <button onclick="criar()">Criar</button><button>Limpar</button>
+    </div>
 
-            div#criaCampos {
-                background-color: rgba(122, 122, 122, 0.363);
-                padding: 10px;
-                width: 400px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Auto Insert</h1>
-            <labe>Numero de Campos:  </labe><input type="Number" id="nCampos"/>
-            <button onclick="criar()">Criar</button><button>Limpar</button><br/><br/>
-            <div id="criaCampos"></div>
+    <!-- DIV QUE RECEBERA AS MODIFICAÇÕES NA TELA -->
+    <div id="criaCampos"></div>
 
-
-            <script>
-                function criar(){
-                    let campos = document.getElementById('nCampos').value
-                    let criaCampos = document.getElementById('criaCampos')
-                    //window.alert('Serão Criados  '+campos+'  Campos')
-                                        
-                    for(let i=1;i <= campos;i++){
-                        var newLabel = document.createElement('label')
-                        newLabel.innerText = `Campo ${i}`
-                        //CRIA INPUT TEXT
-                            var newInput = document.createElement('input') //CRIA CAMPOS
-                            newInput.type = 'text' //SETA COMO TEXT OS CAMPOS
-                            newInput.className = 'text'
-                            newInput.id = i
-                        //INSERE INPUT SELECT
-                            var newSelect = document.createElement('select')
-                            newSelect.innerHTML = '<option>Nome</option>'
-                            newSelect.innerHTML += '<option>Sobrenome</option>'
-                            newSelect.innerHTML += '<option>E-mail</option>'
-                            newSelect.innerHTML += '<option>Endereco</option>'
-                            newSelect.innerHTML += '<option>Cidade</option>'
-                            newSelect.innerHTML += '<option>Pais</option>'
-                            newSelect.innerHTML += '<option>Telefone</option>'
-                        //INSERINDO DENTRO DA DIV
-                            criaCampos.appendChild(newLabel) //INSERE DENTRO DA DIV
-                            criaCampos.appendChild(newInput) //INSERE DENTRO DA DIV
-                            criaCampos.appendChild(newSelect) //INSERE DENTRO DA DIV
-                    }
-                }
-
-
-            </script>
-    </body>
+    <!-- SCRIPT PARA INSERÇÃO DOS DADOS -->
+    <script src="script.js"></script>
+</body>
 </html>

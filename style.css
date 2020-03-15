@@ -1,0 +1,49 @@
+/* PADRÃO PARA TODOS */
+*{
+    padding: 0px;
+    margin: 0px;
+    font: normal 12pt Arial;
+}
+
+/* MAIN */
+
+div#main {
+    background-color: #dedede;   
+    width: 300px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+}
+
+div#main input {
+    margin-bottom: 10px;
+    width: 290px;
+}
+
+div#main button{
+    background-color: chartreuse;
+    padding: 8px;
+    border: chartreuse;
+    margin-left: 10px;
+}
+
+
+
+input.text {
+    display: block;
+    height: 25px;
+    border-radius: 6px;
+}
+
+label {
+    display: block;
+}
+
+div#criaCampos {
+    padding: 10px;
+}
+
+select {
+    display: block;
+    margin-bottom: 20px; 
+}
