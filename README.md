@@ -1,1 +1,7 @@
-script para facilitar a inserção de dados no banco
+# STARTANDO
+ - npm start
+
+ ## START
+    * npm install electron-packager -g
+    -- 
+    - electron-packager <sourcedir> <appname>

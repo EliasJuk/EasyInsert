@@ -1,17 +1,25 @@
 {
-  "name": "webpersonsanalytics",
+  "name": "autoinsert",
   "version": "1.0.0",
-  "description": "analytics",
-  "main": "crawler.js",
-  "dependencies": {
-    "mongoose": "^5.9.3",
-    "mysql": "^2.18.1",
-    "nodemon": "^2.0.2"
+  "description": "script para facilitar a inserção de dados no banco",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^8.1.1",
+    "electron-packager": "^14.2.1"
   },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EliasJuk/autoInsert.git"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EliasJuk/autoInsert/issues"
+  },
+  "homepage": "https://github.com/EliasJuk/autoInsert#readme"
 }
