@@ -7,10 +7,14 @@
 </head>
 <body>
     <!-- DIV PRINCIPAL -->
+    <div>
+        <button onclick="conectar()">CONFIG Banco</button>
+    </div>
     <div id='main'>
         <label>Campos a ser Povoados</label><input type="Number" id="nCampos"/>
-        <label>Linhas a ser Povoadas</label><input type="Number" id="nCampos"/><br/>
+        <label>Linhas a ser Povoadas</label><input type="Number" id="nLinhas"/><br/>
         <button onclick="criar()">Criar</button><button>Limpar</button>
+        <button onclick="insertFaker()">INSERIR</button>
     </div>
 
     <!-- DIV QUE RECEBERA AS MODIFICAÇÕES NA TELA -->

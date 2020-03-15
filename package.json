@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "script para facilitar a inserção de dados no banco",
   "main": "main.js",
-  "dependencies": {},
+  "dependencies": {
+    "faker": "^4.1.0",
+    "mysql": "^2.18.1",
+    "mysql2": "^2.1.0"
+  },
   "devDependencies": {
     "electron": "^8.1.1",
     "electron-packager": "^14.2.1"

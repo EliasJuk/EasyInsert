@@ -47,3 +47,11 @@ select {
     display: block;
     margin-bottom: 20px; 
 }
+
+tr {
+    height: 40px;
+}
+
+td {
+    width: 200px;
+}
