@@ -100,9 +100,27 @@ function insertFaker(){
 
     var s1 = document.getElementById('s1').value    
         
-    if (s1 == 'Nome') {
-        console.log('nome')
+    let opcao = s1
+
+    for(let i=0;i<2;i++){
+        if (s1 == 'Nome') {
+            console.log('nome')
+        }else if (opcao == 'Nome Mulher'){
+            console.log('Nome Mulher')
+        }else if (opcao == 'Nome Homen'){
+            console.log('Nome Homen')
+        }else if (opcao == 'Sobrenome'){
+            console.log('Sobrenome')
+        }else if (opcao == 'E-mail'){
+            console.log('E-mail')
+        }else if (opcao == 'Endereco'){
+            console.log('Endereco')
+        }else if (opcao == 'Cidade'){
+            console.log('Cidade')
+        }else if (opcao == 'Pais'){
+            console.log('Pais')
+        }else if (opcao == 'Telefone'){
+            console.log('Telefone')
+        }
     }
-
-
 }
