@@ -20,13 +20,41 @@ div#main input {
     width: 290px;
 }
 
-div#main button{
-    background-color: chartreuse;
+div#main button.criar{
+    background-color: rgb(75, 143, 6);
     padding: 8px;
-    border: chartreuse;
+    border:  rgb(75, 143, 6);
+    margin-left: 10px;
+    color: #fff;
+}
+
+div#main button.criar:hover{
+    background-color: rgb(109, 211, 8);
+    color: #000;
+}
+
+div#main button.limpar {
+    background-color: #008;
+    color: #fff;
+    padding: 8px;
+    border: #008;
     margin-left: 10px;
 }
 
+/*BOTAO*/
+div#main button.enviar{
+    background-color: #f00;
+    padding: 8px;
+    margin-left: 10px;
+    color: #fff;
+    border: #f00;
+    display: none;
+}
+
+div#main button.enviar:hover{
+    background-color: rgb(240, 148, 148);
+    color: #000f;
+}
 
 
 input.text {
@@ -55,3 +83,4 @@ tr {
 td {
     width: 200px;
 }
+
