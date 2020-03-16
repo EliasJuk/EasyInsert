@@ -41,6 +41,14 @@ div#main button.limpar {
     margin-left: 10px;
 }
 
+div#main button.limpar:hover {
+    background-color: #125599;
+    color: #fff;
+    padding: 8px;
+    border: #125599;;
+    margin-left: 10px;
+}
+
 /*BOTAO*/
 div#main button.enviar{
     background-color: #f00;
@@ -82,5 +90,22 @@ tr {
 
 td {
     width: 200px;
+}
+
+div#menu{
+    background-color: black;
+    height: 60px;
+}
+
+div#menu ul{
+    display: block;
+    margin-left: 20px;
+}
+
+div#menu ul li{
+    background-color: coral;
+    padding: 8px;
+    float: left;
+    margin-top: 8px;
 }
 

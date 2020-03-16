@@ -7,14 +7,16 @@
 </head>
 <body>
     <!-- DIV PRINCIPAL -->
-    <div>
-        <button onclick="conectar()">CONFIG Banco</button>
+    <div id="menu">
+        <ul>
+            <li>MONGO</li>
+        </ul>
     </div>
     <div id='main'>
         <label>Campos a ser Povoados</label><input type="Number" id="nCampos"/>
         <label>Quantas vezes ira realizar o processo</label><input type="Number" id="nLinhas"/><br/>
-        <button onclick="criar()" class="criar">Criar</button>
-        <button disabled='false' class="limpar">Limpar</button>
+        <button onclick="criar()" class="criar" id="criar">Criar</button>
+        <button class="limpar" onclick="limpar()">Limpar</button>
         <button class="enviar" id="enviar" onclick="insertFaker()">Enviar</button>
     </div>
 

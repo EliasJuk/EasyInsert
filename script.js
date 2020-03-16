@@ -1,72 +1,24 @@
-var mysql = require('mysql');
-const faker = require('faker/locale/pt_BR')
-let arrayCad = []
+const faker = require('faker/locale/pt_BR') //IMPORTA A BLIBLIOTECA FAKER
+var arrayCad = [] //VARIAVEL GLOBAL PARA PASSAR OS VALORES DO FAKER
 
-function criar(){
-    let enviar = document.getElementById('enviar')
-    enviar.style.display = 'inline'
-    
-    let campos = document.getElementById('nCampos').value
-    let criaCampos = document.getElementById('criaCampos')
-    //window.alert('Serão Criados  '+campos+'  Campos')
-    
-    for(let i=1;i <= campos;i++){
-        var newLabel = document.createElement('label')
-        newLabel.innerText = `Campo ${i}`
-        //CRIA INPUT TEXT
-            var newInput = document.createElement('input') //CRIA CAMPOS
-            newInput.type = 'text' //SETA COMO TEXT OS CAMPOS
-            newInput.className = 'text'
-            newInput.id = 'i'+i //ID DOS INPUTS
-        //INSERE INPUT SELECT
-            var newSelect = document.createElement('select')
+//IMPORTA O ARQUIVO QUE CRIA OS INPUTS E SELECTS/OPTIONS
+const criar = require('./src/criar')
 
-            newSelect.innerHTML = '<option class="optionNome">Nome</option>'
-            newSelect.innerHTML += '<option class="optionlastName">lastName</option>'
-            newSelect.innerHTML += '<option class="optionfindName">findName</option>'
-            newSelect.innerHTML += '<option class="optionSobrenome">Sobrenome</option>'
-            newSelect.innerHTML += '<option class="optionNMulher">Nome Mulher</option>'
-            newSelect.innerHTML += '<option class="optionNHomen">Nome Homen</option>'
-            newSelect.innerHTML += '<option class="optionNascimento">Nascimento</option>'
-            newSelect.innerHTML += '<option class="optionRG">RG</option>'
-            newSelect.innerHTML += '<option class="optionCPF">CPF</option>'
-            newSelect.innerHTML += '<option class="optionEmail">E-mail</option>'
-            newSelect.innerHTML += '<option class="optionEndereco">Endereco</option>'
-            newSelect.innerHTML += '<option class="optionCidade">Cidade</option>'
-            newSelect.innerHTML += '<option class="optionPais">Pais</option>'
-            newSelect.innerHTML += '<option class="optionCep">CEP</option>'
-            newSelect.innerHTML += '<option class="optionTelefone">Telefone</option>'
-            newSelect.innerHTML += '<option class="optionFuncao">Funcao</option>'
-            newSelect.innerHTML += '<option class="optionJobTitle">JobTitle</option>'
-            newSelect.innerHTML += '<option class="optionjobArea">jobArea</option>'
-            newSelect.innerHTML += '<option class="optionSalario">salario</option>'
-            newSelect.id = 's'+i
-        //INSERINDO DENTRO DA DIV
-            criaCampos.appendChild(newLabel) //INSERE DENTRO DA DIV
-            criaCampos.appendChild(newInput) //INSERE DENTRO DA DIV
-            criaCampos.appendChild(newSelect) //INSERE DENTRO DA DIV
-        }
-        //botaoTabela()    
+//IMPORT O ARQUIVO DE CONEXÃO COM O BANCO DE DADOS
+const connection = require('./src/connection')
+
+function limpar(){
+    console.log('Antes: '+arrayCad)
+    var arrayCad = 0
+    var arrayCad = []
+    window.alert('LIMPO')
+    console.log('Depos: '+arrayCad)
 }
 
-//INSERIR BOTÃO PARA REALIZAR CONSULTA
-    function botaoTabela(){
-        var newButton = document.createElement('button')
-        newButton.style.backgroundColor = '#090'
-        newButton.style.color = '#fff'
-        newButton.style.padding = '10px'
-        newButton.style.borderColor = '#090'
-        newButton.id = 'btnTabela'
-        criaCampos.appendChild(newButton)
-        newButton.innerText = 'TABELA'
-        document.getElementById('btnTabela').addEventListener("click", tabela); //CHAMA FUNCAO
-    }
-
-//--------
 
 function insertFaker(){
     var buttonEnviar = document.getElementById('enviar')
-    buttonEnviar.style.display = 'none'
+    //buttonEnviar.style.display = 'none'
     var select = 's1' //POSIÇÃO INICIAL DA BUSCA
     var buscar = document.getElementById(select).value  //CONSULTA INICIAL 
     var opcao = buscar //ATRIBUI O VALOR DO PRIMEIRO CAMPO A OPCAO
@@ -109,9 +61,12 @@ function insertFaker(){
             console.log('Nome Homen:' + randomNameMan)
             arrayCad.push(`'${randomNameMan}'`)
 
-        }else if (opcao == 'Nascimento'){
-            var Nascimento = faker.date.month();            
-            console.log('Nascimento:' + Nascimento)
+        }else if (opcao == 'Nascimento'){        
+            let mesNasc = Math.floor(Math.random() * 13);
+            let diaNasc = Math.floor(Math.random() * 30);
+            let anoNasc = Math.floor(Math.random() * 2005);    
+            let Nascimento = (`${anoNasc}-${mesNasc}-${diaNasc}`)  
+            console.log('Nascimento:' + Nascimento)      
             arrayCad.push(`'${Nascimento}'`)
 
         }else if (opcao == 'CPF'){
@@ -180,30 +135,10 @@ function insertFaker(){
 }
 
 function cadBanco(){
-//CONFIGURAÇÃO DE CONEXAO
-    // Add the credentials to access your database
-    var connection = mysql.createConnection({
-        host     : 'localhost',
-        user     : 'root',
-        password : null, // or the original password : 'apaswword'
-        database : 'test'
-    });
-    
-    // connect to mysql
-    connection.connect(function(err) {
-        // in case of error
-        if(err){
-            console.log(err.code);
-            console.log(err.fatal);
-        }else{
-            console.log('Ok')
-        }
-    });
 
 // RECEBE OS DADOS DO FORMULARIO    
     console.log('DADOS>>>'+arrayCad)
-    let newDados = ("assss","bssss")
-
+    
 //TRATAMENTO DOS CAMPOS DA TABELA
     let totalCampos = document.getElementById('nCampos').value //TOTAL DE CAMPOS
     contCampos = 0
@@ -222,6 +157,7 @@ function cadBanco(){
     
 
 //CONEXAO COM BANCO E INSERÇÃO DOS DADOS
-    connection.query( `INSERT INTO dados(${campoTabela}) VALUES(${arrayCad})`);
+    connection.query( `INSERT INTO dados(${campoTabela}) VALUES(${arrayCad})`)
     alert('Dados Cadstrados com sucesso')
+    
 }
