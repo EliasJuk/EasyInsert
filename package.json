@@ -4,15 +4,17 @@
   "description": "script para facilitar a inserção de dados no banco",
   "main": "main.js",
   "dependencies": {
+    "core-js": "^3.6.4",
     "faker": "^4.1.0",
-    "mysql": "^2.18.1",
-    "mysql2": "^2.1.0"
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "electron": "^8.1.1",
-    "electron-packager": "^14.2.1"
+    "electron-builder": "^22.4.1"
   },
   "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
   },

@@ -16,7 +16,7 @@ function criar(){
             newInput.type = 'text' //SETA COMO TEXT OS CAMPOS
             newInput.className = 'text'
             newInput.id = 'i'+i //ID DOS INPUTS
-        //INSERE INPUT SELECT
+        //INSERE INPUT SELECT COM AS OPTIONS
             var newSelect = document.createElement('select')
 
             newSelect.innerHTML = '<option class="optionNome">Nome</option>'
@@ -42,6 +42,7 @@ function criar(){
         //INSERINDO DENTRO DA DIV
             criaCampos.appendChild(newLabel) //INSERE DENTRO DA DIV
             criaCampos.appendChild(newInput) //INSERE DENTRO DA DIV
+            newSelect.className = 'select' //DEFINE UMA CLASSE AO SELECT
             criaCampos.appendChild(newSelect) //INSERE DENTRO DA DIV
         }
         //botaoTabela()    

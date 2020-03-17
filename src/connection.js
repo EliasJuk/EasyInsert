@@ -13,10 +13,11 @@ var connection = mysql.createConnection({
 connection.connect(function(err) {
     // in case of error
     if(err){
-        console.log(err.code);
-        console.log(err.fatal);
+        //console.log(err.code);
+        //console.log(err.fatal);
+        //alert('Não Foi Possivel estabelecer a conexao com o banco de dados')
     }else{
-        console.log('Ok')
+        //console.log('Ok')
     }
 });
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Mysql</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="../index.html">HOME</a></li>
+        </ul>
+    </div>   
+    <div id='main'>
+            <label>Campos a ser Povoados</label><input type="Number" id="nCampos"/>
+            <label>Quantas vezes ira realizar o processo</label><input type="Number" id="nLinhas"/><br/>
+            <button onclick="criar()" class="criar" id="criar">Criar</button>
+            <button class="limpar" onclick="limpar()">Limpar</button>
+            <button class="enviar" id="enviar" onclick="insertFaker()">Enviar</button>
+    </div>
+
+    <!-- DIV QUE RECEBERA AS MODIFICAÇÕES NA TELA -->
+    <div id="criaCampos"></div>
+
+    <!-- SCRIPT PARA INSERÇÃO DOS DADOS -->
+    <script src="script.js"></script>
+</body>
+</html>
