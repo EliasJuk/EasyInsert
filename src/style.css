@@ -21,8 +21,10 @@ div#main {
 
 
 div#main input {
-    margin-bottom: 10px;
     width: 290px;
+    padding: 5px;
+    float: left;
+    margin-left: 10px;
 }
 
 div#main button.criar{
@@ -138,6 +140,20 @@ div#menu ul li:hover{
     background-color: #FFF;
 }
 
+h3.aviso {
+    margin-top: 8px;
+    color: orangered;
+}
+
+h4.aviso {
+    margin-top: 6px;
+    color: orangered;
+    margin-left: 10px;
+}
+
+option.title{
+    background-color: palegreen;
+}
 
 
 

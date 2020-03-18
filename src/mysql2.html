@@ -11,15 +11,18 @@
             <li><a href="../index.html">HOME</a></li>
         </ul>
     </div>   
-    <div id='main'>
-            <label>Campos a ser Povoados</label><input type="Number" id="nCampos"/>
-            <label>Quantas vezes ira realizar o processo</label><input type="Number" id="nLinhas"/><br/>
+
+    <div id='main'><br>
+            <input type="Number" id="nCampos" placeholder="Campos a ser Povoados"/>
+            <input type="Number" id="nLinhas" placeholder="Quantas vezes ira realizar o processo"/>
             <button onclick="criar()" class="criar" id="criar">Criar</button>
             <button class="limpar" onclick="limpar()">Limpar</button>
-            <button class="enviar" id="enviar" onclick="insertFaker()">Enviar</button>
+            <button class="enviar" id="enviar" onclick="insertFaker()">Enviar</button><br/>
+            <h3 class="aviso">**Informe corretamente a quantidade de campos a serem preenchidos, com exceção do campo <b>ID</b></h3>
     </div>
 
     <!-- DIV QUE RECEBERA AS MODIFICAÇÕES NA TELA -->
+    <h4 class="aviso" id="avisoCampo"></h4>
     <div id="criaCampos"></div>
 
     <!-- SCRIPT PARA INSERÇÃO DOS DADOS -->

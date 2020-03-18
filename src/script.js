@@ -37,12 +37,12 @@ function insertFaker(){
             console.log('Nome:'+ randomName)
             arrayCad.push(`'${randomName}'`)
 
-        }else if (opcao == 'lastName'){
+        }else if (opcao == 'Nome do Meio'){
             var randomLastName = faker.name.lastName();
             console.log('Nome do Meio: ' + randomLastName)
             arrayCad.push(`'${randomLastName}'`)
 
-        }else if (opcao == 'findName'){
+        }else if (opcao == 'Ultimo Nome'){
             var randomSobrenome = faker.name.findName();
             console.log('Ultimo Nome' + randomSobrenome)   
             arrayCad.push(`'${randomSobrenome}'`)           
@@ -129,6 +129,10 @@ function insertFaker(){
             var salario = faker.finance.amount()
             console.log('salario: ' + salario)
             arrayCad.push(`'${salario}'`)
+        }else if (opcao == 'ID randomico'){
+            let idRamd = Math.floor(Math.random() * 2);
+            let idRamdo = idRamd + 1
+            arrayCad.push(`'${idRamdo}'`)
         }
     }
     cadBanco()
@@ -158,7 +162,7 @@ function cadBanco(){
 
 //CONEXAO COM BANCO E INSERÇÃO DOS DADOS
     let recebidos = arrayCad
-    connection.query( `INSERT INTO dados(${campoTabela}) VALUES(${recebidos})`)
+    connection.query( `INSERT INTO funcionarios(${campoTabela}) VALUES(${recebidos})`)
     alert('Dados Cadstrados com sucesso')
     arrayCad = [] //LIMPA O CONTEUDO RECEBIDO PARA RECEBER NOVOS
     

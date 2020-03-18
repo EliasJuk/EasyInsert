@@ -1,4 +1,11 @@
+function choose(){
+    alert('aaa')  
+}
+
+
 function criar(){
+    let avisoCampo = document.getElementById('avisoCampo')
+    avisoCampo.innerText = "** Na area campo preencha com o nome das colunas de seu Banco de dados e escolha com qual dado ira preencher"
     var buttonCriar = document.getElementById('criar')
     buttonCriar.style.display = 'none'
     let enviar = document.getElementById('enviar')
@@ -19,12 +26,14 @@ function criar(){
         //INSERE INPUT SELECT COM AS OPTIONS
             var newSelect = document.createElement('select')
 
-            newSelect.innerHTML = '<option class="optionNome">Nome</option>'
-            newSelect.innerHTML += '<option class="optionlastName">lastName</option>'
-            newSelect.innerHTML += '<option class="optionfindName">findName</option>'
+            newSelect.innerHTML = '<option disabled="disabled" class="title">NOMES</option>'
+            newSelect.innerHTML += '<option class="optionName">Nome</option>'
+            newSelect.innerHTML += '<option class="optionlastName">Nome do Meio</option>'
+            newSelect.innerHTML += '<option class="optionfindName">Ultimo Nome</option>'
             newSelect.innerHTML += '<option class="optionSobrenome">Sobrenome</option>'
             newSelect.innerHTML += '<option class="optionNMulher">Nome Mulher</option>'
             newSelect.innerHTML += '<option class="optionNHomen">Nome Homen</option>'
+            newSelect.innerHTML += "<option disabled='disabled' class='title'>DADOS</option>"
             newSelect.innerHTML += '<option class="optionNascimento">Nascimento</option>'
             newSelect.innerHTML += '<option class="optionRG">RG</option>'
             newSelect.innerHTML += '<option class="optionCPF">CPF</option>'
@@ -34,6 +43,9 @@ function criar(){
             newSelect.innerHTML += '<option class="optionPais">Pais</option>'
             newSelect.innerHTML += '<option class="optionCep">CEP</option>'
             newSelect.innerHTML += '<option class="optionTelefone">Telefone</option>'
+            newSelect.innerHTML += "<option disabled='disabled' class='title'>IDs</option>"
+            newSelect.innerHTML += '<option class="randomID">ID randomico</option>'
+            newSelect.innerHTML += "<option disabled='disabled' class='title'>Trabalho</option>"
             newSelect.innerHTML += '<option class="optionFuncao">Funcao</option>'
             newSelect.innerHTML += '<option class="optionJobTitle">JobTitle</option>'
             newSelect.innerHTML += '<option class="optionjobArea">jobArea</option>'
@@ -43,9 +55,12 @@ function criar(){
             criaCampos.appendChild(newLabel) //INSERE DENTRO DA DIV
             criaCampos.appendChild(newInput) //INSERE DENTRO DA DIV
             newSelect.className = 'select' //DEFINE UMA CLASSE AO SELECT
+            newSelect.onchange = "choose()"
             criaCampos.appendChild(newSelect) //INSERE DENTRO DA DIV
         }
         //botaoTabela()    
 }
+
+
 
 module.exports = criar

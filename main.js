@@ -4,7 +4,7 @@ function createWindow () {
   // Cria uma janela de navegação.
   let win = new BrowserWindow({
     width: 800,
-    height: 600,
+    height: 800,
     webPreferences: {
       nodeIntegration: true
     }
