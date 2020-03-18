@@ -1,4 +1,6 @@
 var mysql = require('mysql');
+let buttonStatus = document.getElementById('btnstatus')
+let buttonConfig = document.getElementById('btnconfig')
 
 //CONFIGURAÇÃO DE CONEXAO
 // Add the credentials to access your database
@@ -15,11 +17,17 @@ connection.connect(function(err) {
     if(err){
         //console.log(err.code);
         //console.log(err.fatal);
-        //alert('Não Foi Possivel estabelecer a conexao com o banco de dados')
+        buttonStatus.style.backgroundColor += 'red'
+        buttonConfig.style.backgroundColor += 'red'
+
     }else{
-        //console.log('Ok')
+        buttonStatus.style.backgroundColor += 'green'
+        buttonConfig.style.backgroundColor += 'green'
+        //inputbuscar.disabled = 'false'
+        //btnbuscar.disabled = 'false'
     }
 });
+
 
 
 module.exports = connection

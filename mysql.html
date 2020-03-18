@@ -15,20 +15,21 @@
                 </ul>
             </nav>
         </header>
-        <main>
-            
-
+        <main>  
+            <div id="campos"></div>       
         </main>
         <aside id="mysql">
-                <button class="status">STATUS</button><button class="config">CONFIG</button>
+                <button id="btnstatus" class="status" onclick="">STATUS</button><button id="btnconfig" class="config">CONFIG</button>
             <fieldset>
                 <legend>NOME DB</legend>
-                <input type="text" class="text"></br><button class="buscar">BUSCAR</button>
+                <input type="text" class="text" id="inputbuscar"></br>
+                <button id="btnbuscar" class="buscar" onclick="showbases()" >BUSCAR</button>
             </fieldset>
         </aside>
         <footer>
             
         </footer>
+        <script src="index.js"></script>
     </div>
 </body>
 </html>
