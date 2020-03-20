@@ -2,6 +2,16 @@ var mysql = require('mysql');
 let buttonStatus = document.getElementById('btnstatus')
 let buttonConfig = document.getElementById('btnconfig')
 
+
+
+function dataBases(){
+
+
+
+    //show DATABASES
+}
+
+
 //CONFIGURAÇÃO DE CONEXAO
 // Add the credentials to access your database
 var connection = mysql.createConnection({

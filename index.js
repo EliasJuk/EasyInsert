@@ -1,6 +1,58 @@
 //IMPORT O ARQUIVO DE CONEXÃO COM O BANCO DE DADOS
 const connection = require('./src/connection')
 let divCampos = document.getElementById("campos")
+let divbancos = document.getElementById('bancos')
+let divtabelas = document.getElementById('tabelas')
+let selectTables = document.getElementById('selectTables')
+
+function showbancos(){
+    //CONSULTA O NOME DOS BANCOS DE DADOS
+    connection.query( `SHOW DATABASES`, function(err, bancos, fields){
+        if(!err){
+            let dados = bancos
+            let maxData = dados.length            
+            var newSelectMultiple = document.createElement('select')
+            newSelectMultiple.multiple = true
+            newSelectMultiple.id ="newSelectMultiple"
+            divbancos.appendChild(newSelectMultiple)
+            for(let i = 0;i<maxData;i++){
+                newSelectMultiple.innerHTML  += `<option id='opt${i}'>${dados[i].Database}</option>`
+            }
+
+            //CHAMA UM EVENTO AO CLICAR EM UM OPTION DENTRO DO SELECT
+            newSelectMultiple.addEventListener("click", function(){
+                divtabelas.style.display = 'block'
+                var x = document.getElementById("newSelectMultiple").value;  
+            
+
+                //PROCURA NO BANCO DE DADOS O NOME DAS TABELAS DENTRO CONTIDA EM UM DATABASE
+                connection.query( `SHOW TABLES FROM ${x}`, function(err, tablerows, fields){
+                    if(!err){
+                        maxTables = tablerows.length 
+                        console.log(x)
+                        //console.log(tablerows[0].Tables_in_askme)
+                        for(let iTable=0;iTable<maxTables;iTable++){
+                            //let vtables = tablerows[iTable].Tables_in_askme
+                            //selectTables.innerHTML += `<option>${vtables}</option>`
+                        }
+                    }else{
+                        console.log('Erro ao Realizar Consulta');  
+                    }
+                })
+            })
+        }else{
+            console.log('Error');  
+        }
+    })
+}
+
+
+//EVENTOS QUE SÃO TRIGADOS AO SELECIONAR UMA OPÇÃO DO SELECT
+function myFunction() {
+        var x = document.getElementById("mySelect").value;
+        document.getElementById("demo").innerHTML = "You selected: " + x;
+    }
+
 
 function showbases(){
     let table = document.getElementById('inputbuscar').value

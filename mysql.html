@@ -21,10 +21,19 @@
         <aside id="mysql">
                 <button id="btnstatus" class="status" onclick="">STATUS</button><button id="btnconfig" class="config">CONFIG</button>
             <fieldset>
-                <legend>NOME DB</legend>
+                <legend>BUSCAR</legend>
+                <!--
                 <input type="text" class="text" id="inputbuscar"></br>
-                <button id="btnbuscar" class="buscar" onclick="showbases()" >BUSCAR</button>
+                <button id="btnbuscar" class="buscar" onclick="showbases()" >BUSCAR</button>-->
+                <button onclick="showbancos()">BANCOS</button>
             </fieldset>
+            <div id='bancos'></div>
+            
+            <div id='tabelas'>
+                <select id="selectTables" multiple>
+
+                </select>    
+            </div>
         </aside>
         <footer>
             

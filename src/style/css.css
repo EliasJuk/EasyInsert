@@ -148,4 +148,27 @@ div#campos select{
 }
 
 
+/*  CONSULTA BANCOS  */
+
+div#bancos {
+    margin-top: 10%;
+}
+
+#newSelectMultiple {
+    height: 25vh;
+    width: 80%;
+    margin-left: 10%;
+
+}
+
+div#tabelas {
+    margin-top: 10%;
+    display: none;
+}
+
+#selectTables {
+    height: 25vh;
+    width: 80%;
+    margin-left: 10%;
+}
 
