@@ -20,8 +20,13 @@
         </main>
         <aside id="mysql">
                 <button id="btnstatus" class="status" onclick="">STATUS</button><button id="btnconfig" class="config">CONFIG</button>
-            <fieldset>
-                <legend>NOME DB</legend>
+                <fieldset>
+                    <legend>NOME BANCO</legend>
+                    <input type="text" class="text" id="inputbuscar"></br>
+                    <button id="btnbuscar" class="buscar" onclick="showbases()" >BUSCAR</button>
+                </fieldset>            
+                <fieldset>
+                <legend>NOME TABELA</legend>
                 <input type="text" class="text" id="inputbuscar"></br>
                 <button id="btnbuscar" class="buscar" onclick="showbases()" >BUSCAR</button>
             </fieldset>

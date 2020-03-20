@@ -1,6 +1,7 @@
 var mysql = require('mysql');
 let buttonStatus = document.getElementById('btnstatus')
 let buttonConfig = document.getElementById('btnconfig')
+var databaseName = 'rh'
 
 //CONFIGURAÇÃO DE CONEXAO
 // Add the credentials to access your database
@@ -8,7 +9,7 @@ var connection = mysql.createConnection({
     host     : 'localhost',
     user     : 'root',
     password : null, // or the original password : 'apaswword'
-    database : 'rh'
+    database : `${databaseName}`
 });
     
 // connect to mysql
